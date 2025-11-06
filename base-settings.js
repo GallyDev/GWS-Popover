@@ -1,7 +1,11 @@
-popover_linkselector = '.toggle_popover a,a.toggle_popover';
-popover_loader_color = '#000';
+if(typeof popover_linkselector === 'undefined')
+	popover_linkselector = '.toggle_popover a,a.toggle_popover';
 
-popover_svg = `
+if(typeof popover_loader_color === 'undefined')
+	popover_loader_color = '#000';
+
+if(typeof popover_svg === 'undefined')
+	popover_svg = `
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" id="spinner"
 		style="shape-rendering: auto; display: block; background: rgb(255, 255, 255);" width="200" height="200"
 		xmlns:xlink="http://www.w3.org/1999/xlink">

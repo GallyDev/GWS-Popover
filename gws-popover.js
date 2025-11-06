@@ -1,4 +1,4 @@
-const popoverlinks = document.querySelectorAll(popoverlinkselector);
+const popoverlinks = document.querySelectorAll(popover_linkselector);
 // if there are popover links on the page create a modal dialog with a close button and an empty iframe
 if (popoverlinks.length > 0) {
   // create a modal dialog
