@@ -1,0 +1,114 @@
+dialog#popover{
+	position: fixed;
+	flex-direction: column;
+	justify-content: center;
+	inset: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 100vh;
+	width: 100svw;
+	width: 100dvw;
+	height: 100svh;
+	height: 100dvh;
+	max-width: 100vw;
+	max-height: 100vh;
+	background: rgb(0 0 0 / 0.8);
+	border:none;
+	padding: var(--wp--preset--spacing--20);
+	margin: 0;
+	box-sizing: border-box;
+
+	div{
+		max-width: 1320px;
+		margin: 0 auto;
+		background: #fff;
+		flex: 0;
+		width: 100%;
+		min-height: 0;
+		position: relative;
+		overflow: hidden;
+
+		button{
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: none;
+			border: none;
+			font-size: 2em;
+			color: #000;
+			background: #fff;
+			height: 40px;
+			width: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			outline: none;
+
+		}
+		iframe{
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+		svg{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			left: calc(50% - 50px);
+			top: calc(50% - 50px);
+		}
+	}
+}
+dialog#popover[open] {
+	display: flex;
+	animation: showDialog 0.5s ease forwards;
+	
+	div{
+		animation: showDialogContent 0.75s ease forwards;
+	}
+}
+dialog#popover[closing] {
+	animation: hideDialog 0.5s ease forwards;
+	div{
+		animation: hideDialogContent 0.25s ease forwards;
+	}
+}
+dialog#popover::backdrop{
+	display:none;
+}
+
+@keyframes showDialog {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes showDialogContent {
+	0% {
+		flex: 0;
+	}
+	100% {
+		flex: 1;
+	}
+}
+@keyframes hideDialog {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes hideDialogContent {
+	0% {
+		flex: 1;
+	}
+	100% {
+		flex: 0;
+	}
+}

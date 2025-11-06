@@ -1,7 +1,18 @@
 <?php
 	// this file will be included by GWS-Debugian automatically
+	define('GWS_POPOVER_VERSION', '1.0.0');
 
-	add_action('wp_footer', 'gws_test_footer');
-	function gws_test_footer() {
-		echo 'Nur ein Testi :)';
+	add_action('wp_enqueue_scripts', 'gws_popover_scripts');
+	function gws_popover_scripts() {
+		wp_enqueue_script( 'gws-popover-base-settings', plugin_dir_url( __FILE__ ) . 'base-settings.js', array(), GWS_POPOVER_VERSION, true );
+		if(file_exists(plugin_dir_path( __FILE__ ) . 'settings.js')) {
+			wp_enqueue_script( 'gws-popover-settings', plugin_dir_url( __FILE__ ) . 'settings.js', array(), GWS_POPOVER_VERSION, true );
+		}
+		wp_enqueue_script( 'gws-popover-js', plugin_dir_url( __FILE__ ) . 'gws-popover.js', array(), GWS_POPOVER_VERSION, true );
+		
+		wp_enqueue_style( 'gws-popover-base-css', plugin_dir_url( __FILE__ ) . 'base-style.css', array(), GWS_POPOVER_VERSION );
+		if(file_exists(plugin_dir_path( __FILE__ ) . 'style.css')) {
+			wp_enqueue_style( 'gws-popover-css', plugin_dir_url( __FILE__ ) . 'style.css', array(), GWS_POPOVER_VERSION );
+		}
 	}
+	
