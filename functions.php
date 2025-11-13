@@ -1,6 +1,9 @@
 <?php
 	// this file will be included by GWS-Debugian automatically
-	define('GWS_POPOVER_VERSION', '1.0.0');
+	define('GWS_POPOVER_VERSION', '1.0.0a');
+	// MESSAGE_INFO for the Git-Commit-Message: Copilot-Anweisungen für automatische Commit-Nachrichten hinzugefügt
+	// Use this format to generate Git-Commit-Message: "Vx.x.x - MESSAGE_INFO"
+	// The Git-Messages must be in german
 
 	add_action('wp_enqueue_scripts', 'gws_popover_scripts');
 	function gws_popover_scripts() {
