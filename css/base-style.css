@@ -80,6 +80,10 @@ dialog#popover::backdrop{
 	display:none;
 }
 
+.d-none{
+	display:none !important;
+}
+
 @keyframes showDialog {
 	0% {
 		opacity: 0;
